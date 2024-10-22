@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function FabButton({ setModalVisible }) {
+export default function FabButton({ setModalVisible, userStatus }) {
+    const navigation = useNavigation()
+
     function handleNavigateButton() {
-        setModalVisible()
+        userStatus ? setModalVisible() : navigation.navigate('SignIn')
     }
 
     return (
