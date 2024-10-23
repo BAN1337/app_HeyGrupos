@@ -11,7 +11,7 @@ export default function ChatList({ data, deleteRoom, userStatus }) {
     }
 
     return (
-        <TouchableOpacity onPress={openChat} onLongPress={deleteRoom}>
+        <TouchableOpacity onPress={openChat} onLongPress={() => deleteRoom && deleteRoom()}>
             <View style={styles.row}>
                 <View style={styles.content}>
                     <View style={styles.header}>
